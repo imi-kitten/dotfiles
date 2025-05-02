@@ -1,0 +1,17 @@
+local bufferline = require('bufferline')
+bufferline.setup {
+  options = {
+    mode = "tabs",
+    style_preset = bufferline.style_preset.no_italic,
+    diagnostics = "nvim_lsp",
+    diagnostics_update_on_event = true,
+    offsets = {
+      {
+        filetype = "neo-tree",
+        text = "File Explorer",
+        highlight = "Directory",
+        separator = true -- use a "true" to enable the default, or set your own character
+      },
+    },
+  }
+}

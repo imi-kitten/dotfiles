@@ -1,0 +1,213 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+transient_prompt:
+  template: "\ue285 "
+  foreground: "#FEF5ED"
+  background: transparent
+console_title_template: "{{.UserName}}@{{.HostName}} using {{.Shell}} in {{ .Folder }}"
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      alpine: "\uf300 "
+      arch: "\uf303 "
+      cache_duration: none
+      centos: "\uf304 "
+      debian: "\uf306 "
+      elementary: "\uf309 "
+      fedora: "\uf30a "
+      gentoo: "\uf30d "
+      linux: "\ue712 "
+      macos: "\uf179 "
+      manjaro: "\uf312 "
+      mint: "\uf30f "
+      opensuse: "\uf314 "
+      raspbian: "\uf315 "
+      ubuntu: "\uf31b "
+      windows: "\ue62a "
+      wsl: "\ue712 "
+    leading_diamond: 
+    trailing_diamond: "<transparent,#FEF5ED>\ue0b2</>"
+    template: " {{ if .WSL }}WSL at {{ end }}{{.Icon}}"
+    foreground: "#011627"
+    background: "#FEF5ED"
+    type: os
+    style: diamond
+  - properties:
+      cache_duration: none
+      time_format: 03:04:05 PM MST | Monday
+    leading_diamond: 
+    trailing_diamond: "<transparent,#502688>\ue0b2</>"
+    template: " ♥ {{ .CurrentDate | date .Format }} \uf073 "
+    foreground: "#FEF5ED"
+    background: "#502688"
+    type: time
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#8F61DB>\ue0b2</>"
+    template: " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} "
+    foreground: "#011627"
+    background: "#8F61DB"
+    type: session
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#8F61DB>\ue0b2</>"
+    template: " \uf489 {{ .Name }} "
+    foreground: "#011627"
+    background: "#8F61DB"
+    type: shell
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    template: "\ue266 CPU: {{ round .PhysicalPercentUsed .Precision }}% | "
+    foreground: "#ffffff"
+    background: "#DA70D6"
+    type: sysinfo
+    style: diamond
+  - properties:
+      cache_duration: none
+    trailing_diamond: "<transparent,#DA70D6>\ue0b2</>"
+    template: "RAM: {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266 "
+    foreground: "#ffffff"
+    background: "#DA70D6"
+    type: sysinfo
+    style: diamond
+  - properties:
+      branch_icon: "\ue725 "
+      cache_duration: none
+      fetch_stash_count: true
+      fetch_status: true
+      fetch_upstream_icon: true
+      fetch_worktree_count: true
+    leading_diamond: 
+    trailing_diamond: 
+    template: " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
+    foreground: "#ffffff"
+    background: "#2e36aa"
+    type: git
+    style: diamond
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#FEF5ED>\ue0b2</>"
+    template: " ❤ "
+    foreground: "#011627"
+    background: "#FEF5ED"
+    type: text
+    style: diamond
+  - properties:
+      cache_duration: none
+      time_format: 03:04:05 PM MST
+    leading_diamond: 
+    trailing_diamond: "<transparent,#502688>\ue0b2</>"
+    template: " ♥ {{ dateInZone .Format .CurrentDate \"UTC\" }} "
+    foreground: "#FEF5ED"
+    background: "#502688"
+    type: time
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#EE4A90>\ue0b2</>"
+    template: " \ue235 {{ .Venv }} "
+    foreground: "#000000"
+    background: "#EE4A90"
+    type: python
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#EE4A90>\ue0b2</>"
+    foreground: "#000000"
+    background: "#EE4A90"
+    type: docker
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#EE4A90>\ue0b2</>"
+    template: " \U000f10fe {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+    foreground: "#000000"
+    background: "#EE4A90"
+    type: kubectl
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#EE4A90>\ue0b2</>"
+    foreground: "#000000"
+    background: "#EE4A90"
+    type: helm
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#EE4A90>\ue0b2</>"
+    template: " \ue7ad {{.Profile}}{{if .Region}}@{{.Region}}{{end}}"
+    foreground: "#000000"
+    background: "#EE4A90"
+    type: aws
+    style: diamond
+  - properties:
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: "<transparent,#EE4A90>\ue0b2</>"
+    template: " \uebd8 {{ .EnvironmentName }}"
+    foreground: "#000000"
+    background: "#EE4A90"
+    type: az
+    style: diamond
+  - properties:
+      cache_duration: none
+      style: roundrock
+      threshold: 0
+    leading_diamond: 
+    trailing_diamond: "<transparent,#575656>\ue0b2</>"
+    template: " {{ .FormattedMs }} "
+    foreground: "#d6deeb"
+    background: "#575656"
+    type: executiontime
+    style: diamond
+  - properties:
+      always_enabled: true
+      cache_duration: none
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: "#d6deeb"
+    background: "#575656"
+    type: status
+    style: diamond
+  newline: true
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+      folder_icon: 
+      home_icon: home
+      style: agnoster_full
+    template: " \ue5ff {{ .Path }} "
+    foreground: "#ffafd2"
+    type: path
+    style: diamond
+  - properties:
+      always_enabled: true
+      cache_duration: none
+    template: " \ueb05  "
+    foreground: "#ffafd2"
+    type: status
+    style: plain
+    foreground_templates:
+    - "{{ if gt .Code 0 }}#ff0000{{ end }}"
+  newline: true
+version: 3
+shell_integration: true
