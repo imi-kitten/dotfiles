@@ -49,7 +49,6 @@ alias gti='git '
 alias got='git '
 alias get='git '
 alias gpob='git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"'
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 alias gpm='git profile-manager'
 # ---------------------------------------------------------------------------
 # macOS things
@@ -73,7 +72,6 @@ alias vimconfig='nvim ~/.config/nvim/init.vim'
 # ---------------------------------------------------------------------------
 # other
 # ---------------------------------------------------------------------------
-eval "$(/opt/homebrew/bin/brew shellenv)"
 onedark="$(vivid generate one-dark)"
 export LS_COLORS=$onedark
 export EXA_COLORS="da=1;34"
