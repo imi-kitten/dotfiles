@@ -4,32 +4,32 @@ require("mason-lspconfig").setup {
   automatic_installation = true,
 }
 
--- null-ls (none-ls) config
-local null_ls = require("null-ls")
-
--- code action sources
-local code_actions = null_ls.builtins.code_actions
-
--- diagnostic sources
-local diagnostics = null_ls.builtins.diagnostics
-
--- formatting sources
-local formatting = null_ls.builtins.formatting
-
--- hover sources
-local hover = null_ls.builtins.hover
-
--- completion sources
-local completion = null_ls.builtins.completion
-local sources = {
-  null_ls.builtins.diagnostics.alex,
-  null_ls.builtins.formatting.terraform_fmt,
-  null_ls.builtins.diagnostics.terraform_validate,
-  -- null_ls.builtins.diagnostics.vale,
-}
-
-null_ls.setup({ sources = sources })
--- end null-ls config
+-- -- null-ls (none-ls) config
+-- local null_ls = require("null-ls")
+--
+-- -- code action sources
+-- local code_actions = null_ls.builtins.code_actions
+--
+-- -- diagnostic sources
+-- local diagnostics = null_ls.builtins.diagnostics
+--
+-- -- formatting sources
+-- local formatting = null_ls.builtins.formatting
+--
+-- -- hover sources
+-- local hover = null_ls.builtins.hover
+--
+-- -- completion sources
+-- local completion = null_ls.builtins.completion
+-- local sources = {
+--   null_ls.builtins.diagnostics.alex,
+--   null_ls.builtins.formatting.terraform_fmt,
+--   null_ls.builtins.diagnostics.terraform_validate,
+--   -- null_ls.builtins.diagnostics.vale,
+-- }
+--
+-- null_ls.setup({ sources = sources })
+-- -- end null-ls config
 
 -- Utilities for creating configurations
 local util = require "formatter.util"
@@ -84,6 +84,11 @@ vim.lsp.enable('docker_compose_language_service')
 vim.lsp.enable('dockerls')
 vim.lsp.enable('gitlab_ci_ls')
 vim.lsp.enable('gh_actions_ls')
+vim.filetype.add({
+  pattern = {
+    ['.*/%.github[%w/]+workflows[%w/]+.*%.ya?ml'] = 'yaml.github',
+  },
+})
 vim.lsp.enable('helm_ls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('terraformls')
