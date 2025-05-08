@@ -43,6 +43,7 @@ Plug 'arouene/vim-ansible-vault', { 'for': ['yaml', 'yaml.ansible'] } "Vault and
 if has('nvim')
   Plug 'williamboman/mason.nvim' "Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
   Plug 'williamboman/mason-lspconfig.nvim' "Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
+  Plug 'jay-babu/mason-null-ls.nvim'
   Plug 'neovim/nvim-lspconfig' "Quickstart configs for Nvim LSP
   Plug 'hrsh7th/cmp-nvim-lsp' "nvim-cmp source for neovim builtin LSP client
   Plug 'hrsh7th/cmp-buffer' "nvim-cmp source for buffer words
@@ -148,7 +149,6 @@ vnoremap <Leader>y "+y
 " Ansible-Vault
 nnoremap <Leader>av :AnsibleVault<CR>
 nnoremap <Leader>au :AnsibleUnvault<CR>
-let g:ansible_vault_password_file='/home/akoch/pw1'
 
 augroup syntaxes
   autocmd Filetype html setlocal ts=2 sw=2
@@ -364,4 +364,3 @@ endif
 if has('nvim')
   lua require('config')
 endif
-
