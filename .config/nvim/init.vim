@@ -34,7 +34,6 @@ Plug 'tpope/vim-dotenv' "Basic support for .env and Procfile
 if !has('nvim')
   Plug 'sheerun/vim-polyglot' "A solid language pack for Vim.
 endif
-Plug 'ekalinin/Dockerfile.vim' "Vim syntax file & snippets for Docker's Dockerfile
 Plug 'hashivim/vim-hashicorp-tools' "elf-contained and fairly explanatory agglomeration of HashiVim plugins
 Plug 'vim-scripts/bats.vim' "Syntax highlighting for Bats - Bash Automated Testing System
 Plug 'junegunn/vader.vim' "A simple Vimscript test framework
@@ -64,7 +63,6 @@ else
   Plug 'morhetz/gruvbox' "pretty theme
 endif
 Plug 'rhysd/git-messenger.vim' "Vim and Neovim plugin to reveal the commit messages under the cursor <leader>gm
-Plug 'ekalinin/Dockerfile.vim' "Vim syntax file & snippets for Docker's Dockerfile
 Plug 'pedrohdz/vim-yaml-folds' " YAML folding
 Plug 'cuducos/yaml.nvim' " YAML toolkit
 if has('nvim')

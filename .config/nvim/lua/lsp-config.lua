@@ -36,6 +36,25 @@ local sources = {
 }
 
 null_ls.setup({ sources = sources })
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+require("null-ls").setup({
+    -- you can reuse a shared lspconfig on_attach callback here
+    on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+                    -- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
+                    vim.lsp.buf.formatting_sync()
+                end,
+            })
+        end
+    end,
+})
 -- end null-ls config
 
 -- Utilities for creating configurations
@@ -62,12 +81,12 @@ require("formatter").setup {
 -- efmls config start
 local ansible_lint = require('efmls-configs.linters.ansible_lint')
 local shellcheck = require('efmls-configs.linters.shellcheck')
-local flake8 = require('efmls-configs.linters.flake8')
+-- local flake8 = require('efmls-configs.linters.flake8')
 local vint = require('efmls-configs.linters.vint')
 local languages = {
   ['yaml.ansible'] = { ansible_lint },
   bash = { shellcheck },
-  python = { flake8 },
+  -- python = { flake8 },
   vim = { vint },
 }
 vim.lsp.config('efm', {
@@ -86,15 +105,30 @@ vim.lsp.config('efm', {
 -- add language servers here
 vim.lsp.enable('ansiblels')
 vim.lsp.enable('bashls')
-require("lspconfig").bicep.setup {}
-vim.lsp.enable('docker_compose_language_service')
-vim.lsp.enable('dockerls')
+vim.lsp.enable('bicep')
+-- vim.lsp.config('ruff', {
+--   init_options = {
+--     settings = {
+--       -- Ruff language server settings go here
+--     }
+--   }
+-- })
+
+vim.lsp.enable('ruff')
+vim.lsp.config('docker_language_server', {
+  settings = {
+    filetypes = { "Dockerfile", "dockerfile", "yaml.docker-compose" }
+  }
+})
+vim.lsp.enable('docker_language_server')
+-- vim.lsp.enable('docker_compose_language_service')
+-- vim.lsp.enable('dockerls')
 vim.lsp.enable('gitlab_ci_ls')
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gitlab-ci*.{yml,yaml}",
   callback = function()
     vim.bo.filetype = "yaml.gitlab"
-  end,
+ end,
 })
 vim.lsp.enable('gh_actions_ls')
 
