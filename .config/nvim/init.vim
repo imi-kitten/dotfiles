@@ -39,6 +39,7 @@ Plug 'vim-scripts/bats.vim' "Syntax highlighting for Bats - Bash Automated Testi
 Plug 'junegunn/vader.vim' "A simple Vimscript test framework
 Plug 'pearofducks/ansible-vim' "A vim plugin for syntax highlighting Ansible's common filetypes
 Plug 'arouene/vim-ansible-vault', { 'for': ['yaml', 'yaml.ansible'] } "Vault and Unvault inline values of Yaml files
+Plug 'buoto/gotests-vim'
 if has('nvim')
   Plug 'williamboman/mason.nvim' "Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
   Plug 'williamboman/mason-lspconfig.nvim' "Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
@@ -59,6 +60,24 @@ endif
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 if has('nvim')
   Plug 'ellisonleao/gruvbox.nvim' "lua gruvbox
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+  Plug 'AmberLehmann/candyland.nvim'
+  Plug 'tssm/fairyfloss.vim'
+  Plug 'theacodes/witchhazel'
+  Plug 'Mofiqul/dracula.nvim'
+  Plug 'rose-pine/neovim', { 'as': 'rose-pine' }
+  Plug 'Shadorain/shadotheme'
+  Plug 'beikome/cosme.vim'
+  Plug 'neko-night/nvim', { 'as': 'neko-night' }
+  Plug 'Yazeed1s/oh-lucy.nvim'
+  Plug 'anAcc22/sakura.nvim'
+  Plug 'hyperb1iss/silkcircuit-nvim'
+  Plug 'sts10/vim-pink-moon'
+  Plug 'bringsrain/strawberry'
+  " Plug 'catielanier/springtime-girls'
+  Plug 'Integralist/hart-foundation'
+  Plug 'ray-x/aurora'
+  Plug 'rktjmp/lush.nvim'
 else
   Plug 'morhetz/gruvbox' "pretty theme
 endif
@@ -83,6 +102,10 @@ Plug 'someone-stole-my-name/yaml-companion.nvim'
 Plug 'jakewvincent/mkdnflow.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'FabijanZulj/blame.nvim'
+if has('nvim')
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'greggh/claude-code.nvim'
+endif
 
 " Initialize plugin system
 call plug#end()
@@ -182,7 +205,7 @@ set nohlsearch
 
 set background=dark "theme
 if !has('nvim')
-  colorscheme gruvbox "theme
+  colorscheme dracula "theme
 endif
 
 syntax enable "enable syntax after setting rules

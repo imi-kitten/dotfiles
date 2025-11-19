@@ -1,6 +1,26 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "ansiblels", "bashls", "bicep", "efm", "dockerls", "docker_compose_language_service", "vale_ls", "terraformls", "vimls", "yamlls"},
+  ensure_installed = {
+    "ansiblels",
+    "bashll",
+    "bicep",
+    "docker_compose_language_service",
+    "docker_language_server",
+    "dockerls",
+    "efm",
+    "gh_actions_ls",
+    "gitlab_ci_ls",
+    "golangci-lint",
+    "golangci_lint_ls",
+    "helm_ls",
+    "lua_ls",
+    "ruff",
+    "shellcheck",
+    "terraformls",
+    "vale_ls",
+    "vimls",
+    "yamlls"
+  },
   automatic_installation = true,
 }
 require("mason-null-ls").setup({

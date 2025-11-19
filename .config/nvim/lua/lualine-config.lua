@@ -1,7 +1,7 @@
 require('lualine').setup {
   extensions = { 'neo-tree', 'mason', 'trouble' },
   options = {
-    theme = 'gruvbox_dark'
+    theme = 'gruvbox'
   },
   sections = {
     lualine_a = {

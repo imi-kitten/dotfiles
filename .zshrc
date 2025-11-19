@@ -94,7 +94,7 @@ alias ..="cd .."                                # Even faster if I want it
 alias ~="cd ~"                                  # Go home and whatnot
 alias ls='ls -GFh'
 alias ll='eza -aghHl --git --color auto --icons'
-alias src='source ~/.bashrc'
+alias src='source ~/.zshrc'
 alias pip='pip3'
 alias dog='doggo'
 alias 7zz='7z'
@@ -143,12 +143,17 @@ alias vim='nvim'
 alias oldvim='vim'
 alias vimconfig='nvim ~/.config/nvim/init.vim'
 # ---------------------------------------------------------------------------
+# work thingies
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
 # other
 # ---------------------------------------------------------------------------
 eval "$(/opt/homebrew/bin/brew shellenv)"
-onedark="$(vivid generate one-dark)"
-export LS_COLORS=$onedark
-export EXA_COLORS="da=1;34"
+# onedark="$(vivid generate one-dark)"
+# export LS_COLORS=$onedark
+# export EXA_COLORS="da=1;34"
+export EZA_CONFIG_DIR=$HOME/.config/eza/
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -209,3 +214,9 @@ export SYSTEM_CERTIFICATE_PATH="/Library/Application Support/Netskope/STAgent/do
 export HEX_CACERTS_PATH="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 # Setting Grype Anchore vulnerability scanner CA Cert
 export GRYPE_DB_CA_CERT="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
+. "$HOME/.cargo/env"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:'/Users/ikatzchen/Library/Python/3.9/bin'
+export PATH=$PATH:$HOME/.local/bin
+eval "$(mise activate zsh)"
