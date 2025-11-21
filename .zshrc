@@ -141,11 +141,13 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 # ---------------------------------------------------------------------------
 alias vim='nvim'
 alias oldvim='vim'
-alias vimconfig='nvim ~/.config/nvim/init.vim'
+alias vimconfig='nvim ~/.config/nvim/init.lua'
 # ---------------------------------------------------------------------------
 # work thingies
 # ---------------------------------------------------------------------------
-
+# terraform to tofu
+alias terraform='tofu'
+alias tf='tofu'
 # ---------------------------------------------------------------------------
 # other
 # ---------------------------------------------------------------------------

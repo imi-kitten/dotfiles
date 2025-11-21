@@ -2,7 +2,7 @@ require("mason").setup()
 require("mason-lspconfig").setup {
   ensure_installed = {
     "ansiblels",
-    "bashll",
+    "bashls",
     "bicep",
     "docker_compose_language_service",
     "docker_language_server",
@@ -10,12 +10,10 @@ require("mason-lspconfig").setup {
     "efm",
     "gh_actions_ls",
     "gitlab_ci_ls",
-    "golangci-lint",
     "golangci_lint_ls",
     "helm_ls",
     "lua_ls",
     "ruff",
-    "shellcheck",
     "terraformls",
     "vale_ls",
     "vimls",
