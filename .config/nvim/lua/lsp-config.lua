@@ -139,8 +139,8 @@ vim.lsp.config('docker_language_server', {
   }
 })
 vim.lsp.enable('docker_language_server')
--- vim.lsp.enable('docker_compose_language_service')
--- vim.lsp.enable('dockerls')
+vim.lsp.enable('docker_compose_language_service')
+vim.lsp.enable('dockerls')
 vim.lsp.enable('gitlab_ci_ls')
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gitlab-ci*.{yml,yaml}",
