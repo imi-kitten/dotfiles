@@ -4,6 +4,11 @@ transient_prompt:
     template: ' '
     foreground: '#FEF5ED'
     background: transparent
+upgrade:
+  notice: true
+  interval: 168h
+  auto: true
+  source: cdn
 console_title_template: '{{.UserName}}@{{.HostName}} using {{.Shell}} in {{ .Folder }}'
 blocks:
     - type: prompt
