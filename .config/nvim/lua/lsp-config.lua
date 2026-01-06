@@ -133,14 +133,17 @@ vim.lsp.enable('bicep')
 -- })
 
 vim.lsp.enable('ruff')
-vim.lsp.config('docker_language_server', {
-  settings = {
-    filetypes = { "Dockerfile", "dockerfile", "yaml.docker-compose" }
-  }
+
+-- Docker language servers
+vim.lsp.config('dockerls', {
+  filetypes = { "dockerfile" }
 })
-vim.lsp.enable('docker_language_server')
--- vim.lsp.enable('docker_compose_language_service')
--- vim.lsp.enable('dockerls')
+vim.lsp.enable('dockerls')
+
+vim.lsp.config('docker_compose_language_service', {
+  filetypes = { "yaml.docker-compose" }
+})
+vim.lsp.enable('docker_compose_language_service')
 vim.lsp.enable('gitlab_ci_ls')
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.gitlab-ci*.{yml,yaml}",

@@ -431,6 +431,25 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   command = "set ft=yaml.gitlab",
 })
 
+-- Docker filetype detection
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = filetype_group,
+  pattern = { "Dockerfile", "Dockerfile.*", "*.Dockerfile" },
+  command = "set filetype=dockerfile",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = filetype_group,
+  pattern = { "docker-compose*.yml", "docker-compose*.yaml", "compose.yml", "compose.yaml" },
+  command = "set filetype=yaml.docker-compose",
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = filetype_group,
+  pattern = ".dockerignore",
+  command = "set filetype=gitignore",
+})
+
 -- Auto-reload vimrc/init files
 local autoload_group = vim.api.nvim_create_augroup("autoloadvimrc", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {

@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export REQUESTS_CA_BUNDLE="$HOME/.mac-ca-roots"
 # ZPLUG
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -161,8 +162,8 @@ alias vimconfig='nvim ~/.config/nvim/init.lua'
 # work thingies
 # ---------------------------------------------------------------------------
 # terraform to tofu
-alias terraform='tofu'
-alias tf='tofu'
+# alias terraform='tofu'
+# alias tf='tofu'
 # ---------------------------------------------------------------------------
 # other
 # ---------------------------------------------------------------------------
@@ -208,9 +209,6 @@ setopt TRANSIENT_RPROMPT
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # Setting Python Requests Extra CA Path
-export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
-# Setting CURL Extra CA Path
-export CURL_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 # Setting gRPC Extra CA Path
 export GRPC_DEFAULT_SSL_ROOTS_FILE_PATH="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 # Setting OpenSSL Extra CA Path
