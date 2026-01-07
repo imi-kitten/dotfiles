@@ -209,6 +209,9 @@ setopt TRANSIENT_RPROMPT
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # Setting Python Requests Extra CA Path
+export REQUESTS_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
+# Setting CURL Extra CA Path
+export CURL_CA_BUNDLE="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 # Setting gRPC Extra CA Path
 export GRPC_DEFAULT_SSL_ROOTS_FILE_PATH="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 # Setting OpenSSL Extra CA Path
