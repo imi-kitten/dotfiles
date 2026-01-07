@@ -1,7 +1,7 @@
 require('lualine').setup {
   extensions = { 'neo-tree', 'mason', 'trouble' },
   options = {
-    theme = 'catppuccin'
+    theme = 'auto'
   },
   sections = {
     lualine_a = {

@@ -1,5 +1,3 @@
-source ~/.zshrc
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # If not running interactively, don't do anything
@@ -33,3 +31,5 @@ export HEX_CACERTS_PATH="/Library/Application Support/Netskope/STAgent/download/
 # Setting Grype Anchore vulnerability scanner CA Cert
 export GRYPE_DB_CA_CERT="/Library/Application Support/Netskope/STAgent/download/nscacert_combined.pem"
 . "$HOME/.cargo/env"
+
+source "$HOME/.zshrc"

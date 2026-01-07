@@ -23,6 +23,7 @@
 --   dim_inactive = false,
 --   transparent_mode = false,
 -- })
+-- vim.cmd("colorscheme gruvbox")
 
 require("catppuccin").setup({
     flavour = "auto", -- latte, frappe, macchiato, mocha
@@ -98,4 +99,4 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin-mocha"
+vim.cmd.colorscheme "catppuccin"

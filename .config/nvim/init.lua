@@ -164,6 +164,11 @@ require("lazy").setup({
     "greggh/claude-code.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+  -- kitty config
+  {
+    "knubie/vim-kitty-navigator",
+    build = "cp ./*.py ~/.config/kitty/",
+  },
 })
 
 -- ============================================================================
@@ -517,6 +522,16 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     })
   end,
 })
+
+-- ============================================================================
+-- kitty
+-- ============================================================================
+vim.g.kitty_navigator_no_mappings = 1
+vim.keymap.set('n', '<C-S-h>', ':KittyNavigateLeft<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-j>', ':KittyNavigateDown<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-k>', ':KittyNavigateUp<CR>', { silent = true })
+vim.keymap.set('n', '<C-S-l>', ':KittyNavigateRight<CR>', { silent = true })
+
 
 -- ============================================================================
 -- Load Lua Configuration Modules

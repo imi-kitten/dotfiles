@@ -109,7 +109,7 @@ alias cd..="cd .."                              # I don't like spaces..
 alias ..="cd .."                                # Even faster if I want it
 alias ~="cd ~"                                  # Go home and whatnot
 alias ls='ls -GFh'
-alias ll='eza -aghHl --git --color auto --icons'
+alias ll='eza -aghHl --git --color auto --icons --hyperlink'
 alias src='source ~/.zshrc'
 alias pip='pip3'
 alias dog='doggo'
@@ -238,3 +238,6 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:'/Users/ikatzchen/Library/Python/3.9/bin'
 export PATH=$PATH:$HOME/.local/bin
 eval "$(mise activate zsh)"
+
+bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
