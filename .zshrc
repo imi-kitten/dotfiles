@@ -238,3 +238,10 @@ eval "$(mise activate zsh)"
 
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
+
+# bun completions
+[ -s "/Users/ikatzchen/.bun/_bun" ] && source "/Users/ikatzchen/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
