@@ -1,12 +1,7 @@
--- deps:
-require('render-markdown').setup ({
-  file_types = { "markdown", "Avante" },
-})
-require('avante').setup ({
-  -- add any opts here
-  -- for example
-  provider = "ollama",
-  ollama = {
-    model = "qwen2.5-coder:14b"
-  },
-})
+-- Avante configuration is handled in init.lua via lazy.nvim opts
+-- This file is kept for reference but not loaded
+--
+-- Current config:
+--   provider = "ollama"
+--   model = "qwen3-coder:30b"
+--   endpoint = "http://localhost:11434"
